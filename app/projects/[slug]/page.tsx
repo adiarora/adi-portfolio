@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projects } from "@/content/projects";
 import { projectDetailsBySlug } from "@/content/projectDetails";
 
@@ -41,6 +42,62 @@ export default async function ProjectDetailPage({
       <p style={{ fontSize: 18, opacity: 0.9, marginBottom: 18 }}>
         {project.oneLiner}
       </p>
+
+      {project.links && (project.links.github || project.links.demo || project.links.paper) && (
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 12 }}>
+          {project.links.github && project.links.github.trim().length > 0 && (
+            <a
+              href={project.links.github}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                padding: "8px 12px",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.12)",
+                textDecoration: "none",
+                opacity: 0.95,
+              }}
+            >
+              GitHub
+            </a>
+          )}
+
+          {project.links.demo && project.links.demo.trim().length > 0 && (
+            <a
+              href={project.links.demo}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                padding: "8px 12px",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.12)",
+                textDecoration: "none",
+                opacity: 0.95,
+              }}
+            >
+              Demo
+            </a>
+          )}
+
+          {project.links.paper && project.links.paper.trim().length > 0 && (
+            <a
+              href={project.links.paper}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                padding: "8px 12px",
+                borderRadius: 12,
+                border: "1px solid rgba(255,255,255,0.12)",
+                textDecoration: "none",
+                opacity: 0.95,
+              }}
+            >
+              Paper
+            </a>
+          )}
+        </div>
+      )}
+
 
       {/* Overview */}
       <section style={{ marginBottom: 18 }}>

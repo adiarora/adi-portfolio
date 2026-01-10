@@ -35,7 +35,8 @@ export const projects: Project[] = [
       "Built a Flask-based REST API and local package store with SHA-256 validation to securely sync ML/YARA updates. Designed SQL tables and database logic to track sync status, hashes, and timestamps, and automated end-to-end deployment to reduce rollout delays and manual effort.",
     tech: ["Python", "Flask", "REST API", "SQL", "SHA-256"],
     links: {
-      // github: "",
+      github: "",
+      demo: "",
     },
   },
   {
@@ -49,7 +50,8 @@ export const projects: Project[] = [
       "Used OpenAI Whisper to transcribe video reviews and generated summaries to help extract structured customer insights from video and text sources.",
     tech: ["Python", "Whisper", "NLP", "Summarization"],
     links: {
-      // github: "",
+      github: "https://github.com/adiarora/sprinklrAI",
+      demo: "",
     },
   },
   {
@@ -63,8 +65,8 @@ export const projects: Project[] = [
       "A melody-to-harmony generator that creates a three-part harmony from a given melody. Built to explore algorithmic harmony generation using music theory constraints and practical heuristics.",
     tech: ["Python", "Music Theory", "MIDI / Music tooling"],
     links: {
-      // github: "",
-      // demo: "",
+      github: "https://github.com/adiarora/Harmonizer",
+      demo: "",
     },
   },
   {
@@ -76,6 +78,10 @@ export const projects: Project[] = [
     description:
       "An earlier chatbot project built to help employees and customers navigate internal documentation more quickly. Kept as an archived snapshot of early NLP/IR experimentation.",
     tech: ["Python", "NLP", "Search / Retrieval"],
+    links: {
+      github: "https://github.com/adiarora/commbot",
+      demo: "",
+    },
   },
   {
     slug: "fitness-ai",
@@ -86,6 +92,10 @@ export const projects: Project[] = [
     description:
       "Prototype app exploring multimodal nutrition logging: users provide a meal description or photo and receive estimated calories/macros and later micronutrients. Planned expansion includes exercise tracking and personalization.",
     tech: ["Python", "Computer Vision", "NLP", "APIs"],
+    links: {
+      github: "",
+      demo: "",
+    },
   },
   {
     slug: "stock-prediction",
@@ -96,6 +106,10 @@ export const projects: Project[] = [
     description:
       "A simple baseline model using tree-based methods to model the S&P. This is a starting point and will be upgraded with stronger feature engineering, backtesting, and risk-aware evaluation.",
     tech: ["Python", "Pandas", "Scikit-learn", "Time Series"],
+    links: {
+      github: "https://github.com/adiarora/stockPredictor",
+      demo: "",
+    },
   },
   {
     slug: "help-autism-india",
