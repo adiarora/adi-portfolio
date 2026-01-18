@@ -2,6 +2,7 @@ export type ProjectDetails = {
   overview: string;
   problem: string;
   solution: string;
+  howToUse?: string[];
   architecture: string[];
   securityReliability: string[];
   impact: string[];
@@ -80,4 +81,42 @@ export const projectDetailsBySlug: Record<string, ProjectDetails> = {
       "Export directly to notation software for arranger workflows",
     ],
   },
+  "commbot": {
+    overview:
+      "CommBot is an NLP-powered documentation assistant built to help Commvault employees and customers navigate technical docs faster. Instead of manually searching through long knowledge bases, users can ask questions in natural language and get a targeted response plus recommended documentation links.",
+    problem:
+      "Technical documentation is often large, fragmented, and hard to search effectively. Engineers and support teams lose time jumping between pages, and customers often struggle to find the right article to resolve an issue quickly. I wanted to reduce the friction of finding the right docs and improve time-to-resolution with an assistant that understands user intent and can recommend relevant articles.",
+    solution:
+      "I built a lightweight chatbot that combines intent recognition with semantic similarity-based retrieval. The system classifies the user’s query into an intent category, then recommends the most relevant documentation articles based on similarity to curated documentation text. It also includes fallback responses for low-confidence predictions to keep behavior reliable.",
+    howToUse: [
+      "Ask a question in natural language (e.g., error messages, feature questions, or how-to requests)",
+      "The system classifies intent and retrieves the most relevant documentation articles",
+      "Recommended links and responses are returned immediately",
+      "Designed for fast self-serve troubleshooting and internal support workflows"
+    ],
+    architecture: [
+      "User asks a question via CLI (or a Flask UI layer)",
+      "Intent classifier predicts an intent from a fixed set of categories (trained from intents.json)",
+      "System computes semantic similarity between the query and documentation text",
+      "Top matching documentation URLs are returned as recommendations",
+      "Fallback responses are used when confidence is low"
+    ],
+    securityReliability: [
+      "Fallback behavior for low-confidence intent predictions to avoid misleading answers",
+      "Deterministic retrieval logic and controlled intent set keeps responses stable",
+      "Separation between model training and runtime inference reduces operational risk"
+    ],
+    impact: [
+      "Reduced time spent searching documentation by returning targeted links immediately",
+      "Improved self-serve support experience by guiding users to the correct resource faster",
+      "Created a foundation that could be extended into a full web-based internal support assistant"
+    ],
+    yourRole: [
+      "Designed the end-to-end chatbot flow and retrieval strategy",
+      "Implemented and trained the intent recognition model (PyTorch) using labeled intents",
+      "Built similarity-based recommendation logic and integrated it with doc parsing",
+      "Packaged the project for CLI use, with optional Flask components for web deployment"
+    ],
+  },
+
 };

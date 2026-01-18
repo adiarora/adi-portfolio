@@ -12,14 +12,14 @@ export type Project = {
   title: string;
   category: ProjectCategory;
   status: ProjectStatus;
-  featured?: boolean;
   oneLiner: string;
   description: string;
   tech: string[];
   links?: {
     github?: string;
     demo?: string;
-    paper?: string; // pdf link later (for research) if needed
+    paper?: string;
+    video?: string;
   };
 };
 
@@ -29,7 +29,6 @@ export const projects: Project[] = [
     title: "Commvault-Sync",
     category: "Systems",
     status: "Production",
-    featured: true,
     oneLiner: "Secure update synchronization system for ML/YARA packages at scale.",
     description:
       "Built a Flask-based REST API and local package store with SHA-256 validation to securely sync ML/YARA updates. Designed SQL tables and database logic to track sync status, hashes, and timestamps, and automated end-to-end deployment to reduce rollout delays and manual effort.",
@@ -43,8 +42,7 @@ export const projects: Project[] = [
     slug: "sprinklr-ai",
     title: "Sprinklr AI",
     category: "Systems",
-    status: "Working",
-    featured: true,
+    status: "Production",
     oneLiner: "Video review transcription + summarization pipeline for customer insights.",
     description:
       "Used OpenAI Whisper to transcribe video reviews and generated summaries to help extract structured customer insights from video and text sources.",
@@ -59,7 +57,6 @@ export const projects: Project[] = [
     title: "Harmonizer",
     category: "Music",
     status: "Working",
-    featured: true,
     oneLiner: "Generates 3-part harmony from a melody.",
     description:
       "A melody-to-harmony generator that creates a three-part harmony from a given melody. Built to explore algorithmic harmony generation using music theory constraints and practical heuristics.",
@@ -73,14 +70,14 @@ export const projects: Project[] = [
     slug: "commbot",
     title: "CommBot",
     category: "Systems",
-    status: "Archived",
-    oneLiner: "Documentation chatbot for navigating Commvault docs (early project).",
+    status: "Production",
+    oneLiner: "Documentation chatbot for navigating Commvault docs.",
     description:
       "An earlier chatbot project built to help employees and customers navigate internal documentation more quickly. Kept as an archived snapshot of early NLP/IR experimentation.",
     tech: ["Python", "NLP", "Search / Retrieval"],
     links: {
       github: "https://github.com/adiarora/commbot",
-      demo: "",
+      video: "/videos/commbot-demo.mp4",
     },
   },
   {
