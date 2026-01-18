@@ -116,9 +116,12 @@ export const projects: Project[] = [
     title: "Help Autism India",
     category: "Philanthropy",
     status: "Ongoing",
-    oneLiner: "Non-profit initiative to support autistic children in India.",
+    oneLiner: "A non-profit initiative supporting autistic children in India.",
     description:
-      "A personal philanthropy initiative focused on supporting autistic children in India through awareness and practical help.",
-    tech: ["Community", "Operations", "Advocacy"],
+      "Help Autism India is a non-profit initiative I founded to support autistic children in India through awareness, community engagement, and direct assistance. The focus is on improving access to resources and building understanding around autism.",
+    tech: ["Non-Profit", "Community", "Advocacy"],
+    links: {
+      demo: "https://helpautismindia.com",
+    },
   },
 ];

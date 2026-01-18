@@ -75,7 +75,7 @@ export default async function ProjectDetailPage({
                 opacity: 0.95,
               }}
             >
-              Demo
+              {project.slug === "help-autism-india" ? "Website" : "Demo"}
             </a>
           )}
 
