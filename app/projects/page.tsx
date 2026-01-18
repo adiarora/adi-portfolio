@@ -1,6 +1,5 @@
-import { projects } from "@/content/projects";
 import Link from "next/link";
-
+import { projects } from "@/content/projects";
 
 export default function ProjectsPage() {
   const categories = ["Systems", "Music", "Fitness", "Finance", "Philanthropy"] as const;
@@ -12,6 +11,8 @@ export default function ProjectsPage() {
       <p style={{ opacity: 0.85, marginBottom: 20 }}>
         A mix of systems engineering, applied AI, music-tech, finance experimentation, fitness tooling, and philanthropy.
       </p>
+
+      {/* Featured */}
       {featured.length > 0 && (
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontSize: 18, fontWeight: 750, marginBottom: 12 }}>
@@ -54,13 +55,35 @@ export default function ProjectsPage() {
                     </span>
                   ))}
                 </div>
+
+                {/* GitHub button on card */}
+                {p.links?.github && p.links.github.trim().length > 0 && (
+                  <div style={{ marginTop: 10 }}>
+                    <a
+                      href={p.links.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        fontSize: 12,
+                        padding: "6px 10px",
+                        borderRadius: 999,
+                        border: "1px solid rgba(255,255,255,0.12)",
+                        textDecoration: "none",
+                        opacity: 0.85,
+                        display: "inline-block",
+                      }}
+                    >
+                      GitHub →
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </section>
       )}
 
-
+      {/* By category */}
       {categories.map((cat) => {
         const items = projects.filter((p) => p.category === cat);
         if (items.length === 0) return null;
@@ -81,12 +104,10 @@ export default function ProjectsPage() {
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
                     <div>
-                      <div>
-                        <Link href={`/projects/${p.slug}`} style={{ fontSize: 16, fontWeight: 750 }}>
-                          {p.title}
-                        </Link>
-                        <div style={{ opacity: 0.85, marginTop: 4 }}>{p.oneLiner}</div>
-                      </div>
+                      <Link href={`/projects/${p.slug}`} style={{ fontSize: 16, fontWeight: 750 }}>
+                        {p.title}
+                      </Link>
+                      <div style={{ opacity: 0.85, marginTop: 4 }}>{p.oneLiner}</div>
                     </div>
                     <div style={{ opacity: 0.75, whiteSpace: "nowrap" }}>{p.status}</div>
                   </div>
@@ -107,6 +128,28 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
+
+                  {/* GitHub button on card */}
+                  {p.links?.github && p.links.github.trim().length > 0 && (
+                    <div style={{ marginTop: 10 }}>
+                      <a
+                        href={p.links.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          fontSize: 12,
+                          padding: "6px 10px",
+                          borderRadius: 999,
+                          border: "1px solid rgba(255,255,255,0.12)",
+                          textDecoration: "none",
+                          opacity: 0.85,
+                          display: "inline-block",
+                        }}
+                      >
+                        GitHub →
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
